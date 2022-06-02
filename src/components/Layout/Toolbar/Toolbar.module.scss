@@ -1,0 +1,85 @@
+.Toolbar {
+  height: 56px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #18191a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 90;
+}
+
+.Toolbar nav {
+  height: 100%;
+}
+
+.Logo {
+  height: 80%;
+}
+
+@media (max-width: 499px) {
+  .DesktopOnly {
+    display: none;
+  }
+}
+
+@media (min-width: 500px) {
+  .MobileOnly {
+    display: none;
+  }
+}
+
+.Menu {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  /* background-color: white; */
+  padding: 8px 13px;
+  height: 44.8px;
+  width: 60px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.Burger {
+  width: 34px;
+  height: 6px;
+  margin-top: 10px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px gray;
+  transition: all 0.5s ease-in-out;
+}
+
+.Burger::before,
+.Burger::after {
+  content: "";
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 5px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px gray;
+  transition: all 0.5s ease-in-out;
+}
+
+.Burger::before {
+  transform: translateY(-10px);
+}
+
+.Burger::after {
+  transform: translateY(10px);
+}
+
+.Menu:active {
+  color: white;
+  background-color: #44a5ff;
+}
