@@ -198,6 +198,7 @@ const ContactData = () => {
               elementType={form.config.elementType}
               elementConfig={form.config.elementConfig}
               value={form.config.value}
+              placeholder={form.config.elementConfig.placeholder}
             />
           ))}
           <Button disabled={!formValidity} btnType="Success">

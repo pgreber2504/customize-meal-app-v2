@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { fetchOrdersFromServer } from "../../store/actions/index";
 
@@ -12,11 +12,11 @@ const Orders = () => {
 
   useEffect(() => {
     dispatch(fetchOrdersFromServer(token, userId));
-  }, [token, userId, dispatch]);
+  }, [dispatch, token, userId]);
 
   let ordersSpinner: React.ReactNode = <Spinner />;
 
-  if (loader) {
+  if (!loader) {
     ordersSpinner = orders.map((order) => (
       <Order
         key={order.id}
@@ -26,7 +26,7 @@ const Orders = () => {
     ));
   }
 
-  return ordersSpinner;
+  return <Fragment>{ordersSpinner}</Fragment>;
 };
 
 export default Orders;

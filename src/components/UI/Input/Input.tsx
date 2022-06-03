@@ -12,9 +12,10 @@ type inputProps = {
   changed?: (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => void;
-  checked?: () => void;
+  checked?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   label?: string;
   message?: string;
+  placeholder?: string;
 };
 
 const input = ({
@@ -28,6 +29,7 @@ const input = ({
   checked,
   label,
   message,
+  placeholder,
 }: inputProps) => {
   let inputElement = null;
   const classesArray = [classes.InputElement];
@@ -44,6 +46,7 @@ const input = ({
           {...elementConfig}
           value={value}
           onChange={changed}
+          placeholder={placeholder}
         />
       );
       break;
@@ -54,6 +57,7 @@ const input = ({
           {...elementConfig}
           value={value}
           onChange={changed}
+          placeholder={placeholder}
         />
       );
       break;
@@ -76,7 +80,7 @@ const input = ({
       inputElement = (
         <label style={{ color: "#6c757d" }}>
           <input
-            onClick={checked}
+            onChange={checked}
             style={{ width: "16px", height: "16px" }}
             type="checkbox"
           />

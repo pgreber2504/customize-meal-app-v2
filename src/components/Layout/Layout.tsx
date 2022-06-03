@@ -1,17 +1,19 @@
 import { Fragment, useState } from "react";
-import { connect } from "react-redux";
+import { useAppSelector } from "../../store/hooks";
 
 import classes from "./Layout.module.scss";
 import SideDrawer from "./SideDrawer/SideDrawer";
 import Toolbar from "./Toolbar/Toolbar";
 
 type layoutProps = {
-  isAuthenticated: boolean;
   children?: JSX.Element;
 };
 
-const Layout = ({ isAuthenticated, children }: layoutProps) => {
+const Layout = ({ children }: layoutProps) => {
   const [clicked, setClicked] = useState(false);
+  const { token } = useAppSelector((state) => state.auth);
+
+  const isAuthenticated = token !== "";
 
   const disableBackdropHandler = () => {
     setClicked(false);
@@ -37,10 +39,4 @@ const Layout = ({ isAuthenticated, children }: layoutProps) => {
   );
 };
 
-const mapStateToProps = (state: any, ownProps: any) => {
-  return {
-    isAuthenticated: state.auth.token !== null,
-  };
-};
-
-export default connect(mapStateToProps)(Layout);
+export default Layout;

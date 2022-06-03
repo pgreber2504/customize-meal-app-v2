@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 import NavigationItems from "../NavigationItems/NavigationItems";
 import classes from "./Toolbar.module.scss";

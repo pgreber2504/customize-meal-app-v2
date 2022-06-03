@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, useNavigate, Navigate } from "react-router";
+import { Route, useNavigate, Navigate, Routes } from "react-router";
 
 import CheckoutSummary from "../../components/Order/CheckoutSummary/CheckoutSummary";
 import ContactData from "./ContactData/ContactData";
@@ -30,7 +30,9 @@ const Checkout = () => {
           checkoutHandler={checkoutHandler}
           ingredients={ingredients}
         />
-        <Route path={"/contact-data"} element={<ContactData />} />
+        <Routes>
+          <Route path={"contact-data"} element={<ContactData />} />
+        </Routes>
       </div>
     );
   }
