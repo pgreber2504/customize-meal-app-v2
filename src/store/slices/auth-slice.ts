@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
+import { ErrorType } from "../../types/auth";
 interface AuthState {
   token: string;
   userId: string;
-  error: object | null;
-  registerError: object | null;
+  error: ErrorType | null;
+  registerError: boolean | null;
   loader: boolean;
 }
 
@@ -42,7 +42,7 @@ const authSlice = createSlice({
       state.token = "";
       state.userId = "";
     },
-    registerFailed: (state, action: PayloadAction<object>) => {
+    registerFailed: (state, action: PayloadAction<boolean>) => {
       state.registerError = action.payload;
       state.loader = false;
     },

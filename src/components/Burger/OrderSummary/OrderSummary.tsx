@@ -29,7 +29,9 @@ const OrderSummary = ({
       <ul>{ingredientsSummary}</ul>
       <h4>Price: {finalPrice.toFixed(2)}$</h4>
       <p>Go to Checkout?</p>
-      <Button btnType="Success" clicked={continued}></Button>
+      <Button btnType="Success" clicked={continued}>
+        YES
+      </Button>
       <Button btnType="Danger" clicked={cancel}>
         NO
       </Button>

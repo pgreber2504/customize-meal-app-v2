@@ -11,10 +11,10 @@
   padding: 0 20px;
   box-sizing: border-box;
   z-index: 90;
-}
 
-.Toolbar nav {
-  height: 100%;
+  nav {
+    height: 100%;
+  }
 }
 
 .Logo {
@@ -45,6 +45,11 @@
   border-radius: 8px;
   font-size: 0.8em;
   cursor: pointer;
+
+  &:active {
+    color: white;
+    background-color: #44a5ff;
+  }
 }
 
 .Burger {
@@ -55,31 +60,26 @@
   border-radius: 5px;
   box-shadow: 0 2px 5px gray;
   transition: all 0.5s ease-in-out;
-}
 
-.Burger::before,
-.Burger::after {
-  content: "";
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 5px;
-  background: white;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px gray;
-  transition: all 0.5s ease-in-out;
-}
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 5px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px gray;
+    transition: all 0.5s ease-in-out;
+  }
 
-.Burger::before {
-  transform: translateY(-10px);
-}
+  &::before {
+    transform: translateY(-10px);
+  }
 
-.Burger::after {
-  transform: translateY(10px);
-}
-
-.Menu:active {
-  color: white;
-  background-color: #44a5ff;
+  &::after {
+    transform: translateY(10px);
+  }
 }

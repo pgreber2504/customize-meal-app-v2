@@ -28,7 +28,7 @@ const Meals = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const isAuth = token !== null;
+  const isAuth = token !== "";
 
   useEffect(() => {
     if (ingredients) {
@@ -41,7 +41,7 @@ const Meals = () => {
   }, []);
 
   const disableButtonHandler = (ingredients: IngredientType) => {
-    const copiedIngredients = ingredients;
+    const copiedIngredients = { ...ingredients };
 
     const sum = Object.keys(copiedIngredients)
       .map((igKey) => {

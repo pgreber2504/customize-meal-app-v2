@@ -28,7 +28,7 @@ export interface OrderState<U> {
 
 export interface OrderFormType {
   [key: string]: {
-    elementType: "input" | "select";
+    elementType: "input" | "select" | "checkbox";
     elementConfig: {
       type?: string;
       placeholder?: string;
@@ -40,5 +40,8 @@ export interface OrderFormType {
     };
     valid: boolean | { isValid?: boolean; message?: string };
     changed?: boolean;
+    label?: string;
+    message?: string;
+    checked?: boolean;
   };
 }
