@@ -1,0 +1,94 @@
+.BuildControls {
+  width: 100%;
+  background-color: #18191a;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  box-shadow: 0 2px 1px #ccc;
+  margin: auto;
+  padding: 10px 0;
+}
+
+.Checkout {
+  outline: none;
+  cursor: pointer;
+  border: 1px solid rgb(23, 23, 23);
+  color: white;
+  font-family: inherit;
+  font-size: 1.2em;
+  padding: 15px 30px;
+  box-shadow: 2px 2px 2px rgb(35, 35, 35);
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  position: relative;
+  background: #40a4c8;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+
+  &:before {
+    content: "";
+    position: absolute;
+    color: #6c757d;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(52, 52, 52);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+
+  &:hover,
+  &:active {
+    color: white;
+  }
+
+  &:hover:before,
+  &:active:before {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+  }
+
+  &:disabled {
+    -webkit-transform: none;
+    transform: none;
+    background-color: #c7c6c6;
+    cursor: not-allowed;
+    border: 1px solid #ccc;
+    color: #888888;
+  }
+
+  &:hover:disabled {
+    -webkit-transform: none;
+    transform: none;
+  }
+
+  &:not(:disabled) {
+    animation: enable 0.3s linear;
+  }
+}
+
+@keyframes enable {
+  0% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

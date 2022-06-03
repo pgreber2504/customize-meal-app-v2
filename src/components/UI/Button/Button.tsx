@@ -2,9 +2,9 @@ import classes from "./Button.module.scss";
 
 type buttonProps = {
   btnType: string;
-  clicked: () => void;
-  disabled: boolean;
-  children?: JSX.Element;
+  clicked?: () => void;
+  disabled?: boolean;
+  children?: JSX.Element | string;
 };
 
 const Button = ({ clicked, btnType, disabled, children }: buttonProps) => {

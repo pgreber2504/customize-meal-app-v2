@@ -3,16 +3,18 @@ import React from "react";
 import classes from "./Input.module.scss";
 
 type inputProps = {
-  invalid: boolean;
-  shouldValidate: boolean;
-  touched: boolean;
+  invalid: boolean | { isValid?: boolean; message?: string };
+  shouldValidate: { [key: string]: number | boolean | string };
+  touched: boolean | undefined;
   elementType: string;
   elementConfig: any;
   value: string;
-  changed?: (e: React.ChangeEvent) => void;
+  changed?: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => void;
   checked?: () => void;
-  label: string;
-  message: string;
+  label?: string;
+  message?: string;
 };
 
 const input = ({
