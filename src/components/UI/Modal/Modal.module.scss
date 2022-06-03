@@ -1,0 +1,33 @@
+.Modal {
+  position: fixed;
+  z-index: 500;
+  background-color: #18191a;
+  width: 70%;
+  box-shadow: 1px 1px 1px rgb(61, 64, 67);
+  border: 1px solid rgb(44, 44, 48);
+  border-radius: 20px;
+  text-align: center;
+  padding: 16px;
+  left: 15%;
+  top: 30%;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+
+  ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin-left: 5px;
+    list-style: none;
+    float: left;
+    padding: 2px 5px;
+  }
+
+  @media (min-width: 600px) {
+    width: 500px;
+    left: calc(50% - 250px);
+  }
+}
