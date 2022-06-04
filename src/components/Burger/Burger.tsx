@@ -6,7 +6,7 @@ type burgerProps = {
   ingredients: any;
 };
 
-const burger = ({ ingredients }: burgerProps) => {
+const Burger = ({ ingredients }: burgerProps) => {
   let currentIngredients: JSX.Element | any[] = Object.keys(ingredients)
     .map((igKey) => {
       return [...Array(ingredients[igKey])].map((_, i) => {
@@ -30,4 +30,4 @@ const burger = ({ ingredients }: burgerProps) => {
   );
 };
 
-export default burger;
+export default Burger;
